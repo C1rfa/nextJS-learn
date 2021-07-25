@@ -1,10 +1,10 @@
 import React from "react";
 
-import { getEventById } from "./../../public/dummy-data";
+import EventSummary from "./../../components/event-detail/event-summary";
+import EventLogistics from "./../../components/event-detail/event-logistics";
+import EventContent from "./../../components/event-detail/event-content";
 
-import { EventSummary } from "./../../components/event-detail/EventSummary";
-import { EventLogistics } from "./../../components/event-detail/EventLogistics";
-import { EventContent } from "./../../components/event-detail/EventContent";
+import { getEventById } from "./../../public/dummy-data";
 
 const EventPage = ({ id }) => {
   const event = getEventById(id);

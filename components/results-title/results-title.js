@@ -1,9 +1,9 @@
-import { Button } from "../ui/button.js";
+import React from "react";
 import classes from "./results-title.module.css";
 
-function ResultsTitle(props) {
-  const { date } = props;
+import Button from "./../ui/button";
 
+const ResultsTitle = ({ date }) => {
   const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
     month: "long",
     year: "numeric",
@@ -15,6 +15,6 @@ function ResultsTitle(props) {
       <Button link="/events">Show all events</Button>
     </section>
   );
-}
+};
 
 export default ResultsTitle;

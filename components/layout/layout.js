@@ -1,13 +1,14 @@
 import React from "react";
 
-import { MainHeader } from "./main-header.js";
+import MainHeader from "./main-header";
 
-export const Layout = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <>
       <MainHeader />
       <main>{children}</main>
-      {/* FOOTER */}
     </>
   );
 };
+
+export default Layout;

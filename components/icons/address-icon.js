@@ -1,4 +1,4 @@
-export const AddressIcon = (props) => {
+const AddressIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -21,3 +21,5 @@ export const AddressIcon = (props) => {
     </svg>
   );
 };
+
+export default AddressIcon;

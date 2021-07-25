@@ -1,7 +1,11 @@
+//TODO: THIS PAGE IS EXACT COPY OF ./../index.js
+//In need of rework
+
 import React from "react";
 
-import { getAllEvents } from "../../public/dummy-data";
-import EventList from "./../../components/events/EventList";
+import EventList from "./../../components/events/event-list";
+
+import { getAllEvents } from "./../../public/dummy-data";
 
 const EventsPage = () => {
   const items = getAllEvents();

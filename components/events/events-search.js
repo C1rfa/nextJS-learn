@@ -1,19 +1,28 @@
 import React from "react";
 import searchStyles from "./searchStyles.module.css";
 
-import { getUniqueYears, getMonths } from "../../public/dummy-data.js";
-import { Button } from "../ui/button.js";
+import Button from "./../ui/button.js";
 
-export const EventsSearch = (props) => {
+import { getUniqueYears, getMonths } from "./../../public/dummy-data";
+
+const EventsSearch = ({ onSearch }) => {
   const yearRef = React.useRef();
   const monthRef = React.useRef();
 
-  const years = getUniqueYears().map((item) => {
-    return <option value={item}>{item}</option>;
+  const years = getUniqueYears().map((item, ind) => {
+    return (
+      <option key={ind} value={item}>
+        {item}
+      </option>
+    );
   });
 
   const months = getMonths().map((item, ind) => {
-    return <option value={ind + 1}>{item}</option>;
+    return (
+      <option key={ind} value={ind + 1}>
+        {item}
+      </option>
+    );
   });
 
   const onSubmitHandler = (e) => {
@@ -22,7 +31,7 @@ export const EventsSearch = (props) => {
     const year = yearRef.current.value;
     const month = monthRef.current.value;
 
-    props.onSearch(year, month);
+    onSearch(year, month);
   };
 
   return (
@@ -47,3 +56,5 @@ export const EventsSearch = (props) => {
     </form>
   );
 };
+
+export default EventsSearch;

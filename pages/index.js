@@ -1,9 +1,10 @@
 import React from "react";
 import { useRouter } from "next/router";
 
-import EventsList from "./../components/events/EventList.js";
-import { EventsSearch } from "../components/events/events-search.js";
-import { getAllEvents } from "../public/dummy-data.js";
+import EventsList from "./../components/events/event-list";
+import EventsSearch from "./../components/events/events-search";
+
+import { getAllEvents } from "./../public/dummy-data";
 
 const MainPage = () => {
   const router = useRouter();

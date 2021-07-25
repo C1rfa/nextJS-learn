@@ -1,9 +1,9 @@
 import React from "react";
-import Link from "next/link";
-
 import styles from "./styles.module.css";
 
-export const MainHeader = () => {
+import Link from "next/link";
+
+const MainHeader = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -19,3 +19,5 @@ export const MainHeader = () => {
     </header>
   );
 };
+
+export default MainHeader;

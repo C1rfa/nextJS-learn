@@ -1,10 +1,9 @@
-// icon + children
 import React from "react";
 import styles from "./styles.module.css";
 
-import { IconWrapper } from "./../ui/IconWrapper";
+import IconWrapper from "./../ui/icon-wrapper";
 
-export const LogisticItem = ({ Icon, children }) => {
+const LogisticItem = ({ Icon, children }) => {
   return (
     <li className={styles.item}>
       <IconWrapper>
@@ -14,3 +13,5 @@ export const LogisticItem = ({ Icon, children }) => {
     </li>
   );
 };
+
+export default LogisticItem;

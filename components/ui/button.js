@@ -1,10 +1,9 @@
 import React from "react";
+import styles from "./styles.module.css";
 
 import Link from "next/link";
 
-import styles from "./styles.module.css";
-
-export const Button = ({ children, link, onClick }) => {
+const Button = ({ children, link, onClick }) => {
   if (link) {
     return (
       <Link href={link}>
@@ -19,3 +18,5 @@ export const Button = ({ children, link, onClick }) => {
     );
   }
 };
+
+export default Button;
