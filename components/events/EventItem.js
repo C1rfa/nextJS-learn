@@ -3,6 +3,8 @@ import React from "react";
 import styles from "./styles.module.css";
 
 import { Button } from "./../ui/button";
+import { IconWrapper } from "./../ui/IconWrapper";
+
 import { DateIcon } from "./../icons/date-icon";
 import { AddressIcon } from "./../icons/address-icon";
 import { ArrowRightIcon } from "./../icons/arrow-right-icon";
@@ -33,9 +35,9 @@ const EventItem = ({ id, title, date, location, image }) => {
         <div className={styles.actions}>
           <Button link={`/events/${id}`}>
             <span>Explore event</span>
-            <span className={styles.icon}>
+            <IconWrapper>
               <ArrowRightIcon />
-            </span>
+            </IconWrapper>
           </Button>
         </div>
       </div>

@@ -1,0 +1,111 @@
+.item {
+  display: flex;
+  font-size: 1.5rem;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: #aefff8;
+}
+
+.item span {
+  display: block;
+}
+
+.summary {
+  min-width: 100%;
+  min-height: 12.5rem;
+  background-image: linear-gradient(to bottom left, #008b79, #1180a1);
+}
+
+.summary h1 {
+  margin: 0 1rem;
+  padding: 3rem 0;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.logistics {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  background-color: #2b2b2b;
+  padding: 2rem;
+  max-width: 50rem;
+  width: 80%;
+  margin: -3rem auto;
+  color: #d5eeeb;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image {
+  margin: auto;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid white;
+}
+
+.image img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+}
+
+.list {
+  padding: 0;
+  flex: 3;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logistics address {
+  white-space: pre;
+}
+
+.content {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .item {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .image img {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .image {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .list {
+    align-items: flex-start;
+  }
+
+  .logistics {
+    padding: 2rem;
+    margin: -1rem auto;
+    gap: 3rem;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .summary h1 {
+    font-size: 5rem;
+  }
+}

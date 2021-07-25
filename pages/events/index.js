@@ -1,14 +1,12 @@
 import React from "react";
 
+import { getAllEvents } from "../../public/dummy-data";
 import EventList from "./../../components/events/EventList";
 
 const EventsPage = () => {
-  return (
-    <div>
-      <h1>Events Page</h1>
-      <EventList />
-    </div>
-  );
+  const items = getAllEvents();
+
+  return <EventList items={items} />;
 };
 
 export default EventsPage;
