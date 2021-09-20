@@ -1,8 +1,12 @@
 import React from "react";
 
+import { NotificationContext } from "./../../store/notification-context";
+
 import styles from "./newsletter-registration.module.css";
 
 const NewsletterRegistration = () => {
+  const { showNotification, hideNotification } =
+    React.useContext(NotificationContext);
   const emailRef = React.useRef();
   const [infoMessage, setInfoMessage] = React.useState(
     "Sign up to stay updated!"
@@ -11,12 +15,18 @@ const NewsletterRegistration = () => {
   React.useEffect(() => {
     setTimeout(() => {
       setInfoMessage("Sign up to stay updated!");
-    }, 1500);
+      hideNotification();
+    }, 10000);
   }, [infoMessage]);
 
   const registrationHandler = (event) => {
     event.preventDefault();
 
+    showNotification({
+      title: "Sending",
+      message: "Preparing to send your email",
+      status: "pending",
+    });
     fetch("/api/newsletter", {
       method: "POST",
       body: JSON.stringify({ email: emailRef.current.value }),
@@ -27,6 +37,11 @@ const NewsletterRegistration = () => {
       .then((res) => res.json())
       .then((data) => {
         setInfoMessage(data.message);
+        showNotification({
+          title: data.title,
+          message: data.message,
+          status: data.title,
+        });
         emailRef.current.value = "";
       });
   };

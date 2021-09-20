@@ -1,9 +1,13 @@
 import React from "react";
 import styles from "./new-comment.module.css";
 
+import { NotificationContext } from "./../../store/notification-context";
+
 const NewComment = (props) => {
   const [isInvalid, setIsInvalid] = React.useState(false);
   const [message, setMessage] = React.useState("");
+  const { showNotification, hideNotification } =
+    React.useContext(NotificationContext);
 
   const emailInputRef = React.useRef();
   const nameInputRef = React.useRef();
@@ -38,15 +42,27 @@ const NewComment = (props) => {
       .then((data) => {
         if (data.error) {
           setIsInvalid(data.error);
+          showNotification({
+            title: "Error",
+            message: data.message,
+            status: "error",
+          });
         } else {
           emailInputRef.current.value = "";
           nameInputRef.current.value = "";
           commentInputRef.current.value = "";
-          setTimeout(() => {
-            setMessage("");
-          }, 1000);
+          showNotification({
+            title: "Success",
+            message: "Comment sent",
+            status: "success",
+          });
         }
-        setMessage(data.message);
+      })
+      .finally(() => {
+        setTimeout(() => {
+          setMessage("");
+          hideNotification();
+        }, 1000);
       });
   };
 

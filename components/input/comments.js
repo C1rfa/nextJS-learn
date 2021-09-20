@@ -5,7 +5,11 @@ import NewComment from "./new-comment";
 
 import styles from "./comments.module.css";
 
+import { NotificationContext } from "./../../store/notification-context";
+
 const Comments = ({ eventId }) => {
+  const { showNotification, hideNotification } =
+    React.useContext(NotificationContext);
   const [showComments, setShowComments] = React.useState(false);
   const [messageList, setMessageList] = React.useState([]);
 
@@ -14,6 +18,11 @@ const Comments = ({ eventId }) => {
   };
 
   const addCommentHandler = (commentData) => {
+    showNotification({
+      title: "Sending...",
+      message: "Sending comment",
+      status: "pending",
+    });
     return fetch(`/api/comments/${eventId}`, {
       method: "POST",
       body: JSON.stringify(commentData),
