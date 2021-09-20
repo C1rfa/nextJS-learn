@@ -3,13 +3,11 @@ import searchStyles from "./searchStyles.module.css";
 
 import Button from "./../ui/button.js";
 
-import { getUniqueYears, getMonths } from "./../../public/dummy-data";
-
-const EventsSearch = ({ onSearch }) => {
+const EventsSearch = ({ onSearch, months, years }) => {
   const yearRef = React.useRef();
   const monthRef = React.useRef();
 
-  const years = getUniqueYears().map((item, ind) => {
+  const yearsComponents = years.map((item, ind) => {
     return (
       <option key={ind} value={item}>
         {item}
@@ -17,7 +15,7 @@ const EventsSearch = ({ onSearch }) => {
     );
   });
 
-  const months = getMonths().map((item, ind) => {
+  const monthsComponents = months.map((item, ind) => {
     return (
       <option key={ind} value={ind + 1}>
         {item}
@@ -41,14 +39,14 @@ const EventsSearch = ({ onSearch }) => {
           <label htmlFor="year">Year</label>
           <select id="year" ref={yearRef}>
             <option value="0"></option>
-            {years}
+            {yearsComponents}
           </select>
         </div>
         <div className={searchStyles.control}>
           <label htmlFor="month">Month</label>
           <select id="month" ref={monthRef}>
             <option value="0"></option>
-            {months}
+            {monthsComponents}
           </select>
         </div>
       </div>
