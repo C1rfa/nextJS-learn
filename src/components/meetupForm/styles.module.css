@@ -1,0 +1,47 @@
+.form {
+  padding: 1rem;
+  width: 30rem;
+}
+
+.control {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+}
+
+.control label {
+    font-weight: bold;
+    padding: 0.3rem 0;
+}
+
+.control input,
+.control textarea {
+    display: block;
+    border: #ccc 1px solid;
+    border-radius: 3px;
+    padding: 0.2rem;
+}
+
+.control textarea {
+    width: 100%;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.actions button {
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background-color: #77002e;
+    border-radius: 3px;
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: #77002eb4;
+  color: rgba(0, 0, 0, 0.623);
+}

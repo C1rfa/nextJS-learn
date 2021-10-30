@@ -1,0 +1,58 @@
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 20rem);
+}
+
+.image {
+    overflow: hidden;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.content {
+    text-align: center;
+}
+
+.content h3 {
+  font-size: 1.25rem;
+  color: #a01a58;
+}
+
+.content address {
+    color: #723c70;
+}
+
+.content p {
+    padding: 0 0.5rem;    
+}
+
+.actions {
+  text-align: center;
+}
+
+.actions button {
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background-color: #77002e;
+    padding: 0.5rem 1.5rem;
+    width: 100%;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: #77002eb4;
+  color: rgba(0, 0, 0, 0.623);
+}
